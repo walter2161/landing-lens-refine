@@ -23,6 +23,7 @@ import {
   Globe
 } from "lucide-react";
 import { useState } from "react";
+import { ChatBot } from "@/components/ChatBot";
 
 const PURCHASE_LINK = "https://pag.ae/81es9xYnQ/button";
 
@@ -811,6 +812,9 @@ const Index = () => {
           </Button>
         </div>
       </div>
+
+      {/* ChatBot Flutuante */}
+      <ChatBot />
     </div>
   );
 };
