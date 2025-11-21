@@ -22,9 +22,12 @@ import {
   ArrowRight,
   Rocket,
   Lock,
-  Award
+  Award,
+  Globe
 } from "lucide-react";
 import { useState } from "react";
+
+const PURCHASE_LINK = "https://pag.ae/81es9xYnQ/button";
 
 const Index = () => {
   return (
@@ -38,24 +41,26 @@ const Index = () => {
             </div>
             <span className="font-bold text-xl">LedChat</span>
           </div>
-          <Button className="bg-primary hover:bg-primary/90">
-            Garantir Meu LedChat - R$99
+          <Button asChild className="bg-primary hover:bg-primary/90">
+            <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+              Garantir Meu LedChat - R$99
+            </a>
           </Button>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="container py-16 md:py-24">
+      <section id="hero" className="container py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 text-sm">
               🔥 Oferta Limitada - Apenas R$99 (era R$450)
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Multiplique seu <span className="text-primary">faturamento</span> cobrando mais por cada projeto
+              Multiplique seu <span className="text-primary">faturamento</span> cobrando mais por cada projeto WordPress
             </h1>
             <p className="text-xl text-muted-foreground mb-6">
-              O único plugin de WordPress que transforma sites comuns em máquinas de vendas 24/7. 
+              O único plugin de <strong>WordPress</strong> que transforma sites comuns em máquinas de vendas 24/7. 
               Seus clientes vão <strong>implorar</strong> para ter isso.
             </p>
             <ul className="space-y-3 mb-8">
@@ -73,9 +78,11 @@ const Index = () => {
               </li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 h-14">
-                Sim, Quero Faturar Mais Agora
-                <ArrowRight className="ml-2 w-5 h-5" />
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 h-14">
+                <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+                  Sim, Quero Faturar Mais Agora
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted-foreground">
@@ -137,11 +144,11 @@ const Index = () => {
       </section>
 
       {/* Problem/Agitate Section */}
-      <section className="container py-20">
+      <section id="problema" className="container py-20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-8">
             Você está deixando <span className="text-destructive">dinheiro na mesa</span> 
-            em CADA projeto que entrega
+            em CADA projeto WordPress que entrega
           </h2>
           <p className="text-xl text-center text-muted-foreground mb-12">
             Enquanto você entrega "apenas" sites bonitos, seus concorrentes estão cobrando 
@@ -154,7 +161,7 @@ const Index = () => {
               <div className="text-4xl mb-3">😰</div>
               <h3 className="font-bold mb-2">Sem Diferencial</h3>
               <p className="text-sm text-muted-foreground">
-                Você entrega o mesmo que todo mundo: sites bonitos que não vendem sozinhos
+                Você entrega o mesmo que todo mundo: sites WordPress bonitos que não vendem sozinhos
               </p>
             </Card>
             <Card className="p-6 bg-destructive/5 border-destructive/20">
@@ -178,7 +185,7 @@ const Index = () => {
               MAS E SE você pudesse dizer para seu cliente:
             </p>
             <blockquote className="text-xl italic mb-4 text-muted-foreground">
-              "Além do site, vou instalar um <strong className="text-foreground">assistente virtual com IA</strong> que 
+              "Além do site WordPress, vou instalar um <strong className="text-foreground">assistente virtual com IA</strong> que 
               responde dúvidas 24/7, mostra produtos, aumenta vendas automaticamente... 
               por apenas <strong className="text-foreground">R$XXX a mais</strong>"
             </blockquote>
@@ -190,7 +197,7 @@ const Index = () => {
       </section>
 
       {/* Solution - Product Showcase */}
-      <section className="bg-muted/30 py-20">
+      <section id="solucao" className="bg-muted/30 py-20">
         <div className="container">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-primary/10 text-primary">A SOLUÇÃO</Badge>
@@ -199,8 +206,36 @@ const Index = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               O plugin WordPress que adiciona um assistente virtual inteligente em qualquer site. 
-              Ele lê TODO o conteúdo (páginas, posts, produtos) e atende visitantes como um vendedor profissional.
+              Ele lê TODO o conteúdo (páginas, posts, produtos WooCommerce) e atende visitantes como um vendedor profissional.
             </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-12">
+            <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5">
+              <div className="flex items-start gap-4 mb-6">
+                <Globe className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <h3 className="text-2xl font-bold mb-3">Por que WordPress?</h3>
+                  <p className="text-lg text-muted-foreground mb-4">
+                    WordPress é a plataforma de <strong>43% de TODOS os sites da internet</strong>. Mais de 455 milhões de sites ativos no mundo todo. 
+                  </p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>A plataforma mais usada mundialmente para e-commerce e sites corporativos</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Fácil de usar, poderosa e com infinitas possibilidades</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Com o LedChat, você transforma qualquer site WordPress em uma máquina de vendas lucrativa</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -220,7 +255,7 @@ const Index = () => {
                 <div>
                   <h3 className="font-bold text-lg mb-2">IA que Entende Seu Negócio</h3>
                   <p className="text-muted-foreground">
-                    Absorve automaticamente todo conteúdo do site e responde com precisão
+                    Absorve automaticamente todo conteúdo do WordPress e responde com precisão
                   </p>
                 </div>
               </div>
@@ -252,7 +287,7 @@ const Index = () => {
       </section>
 
       {/* Features Grid - Complete */}
-      <section className="container py-20">
+      <section id="recursos" className="container py-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Tudo que você precisa para <span className="text-primary">cobrar mais</span>
@@ -266,7 +301,7 @@ const Index = () => {
           <FeatureCard
             icon={<Zap className="w-10 h-10" />}
             title="Instalação Instantânea"
-            description="5 minutos do upload até funcionar. Plugin > Ativar > Configurar > Shortcode. Pronto."
+            description="5 minutos do upload até funcionar no WordPress. Plugin > Ativar > Configurar > Shortcode. Pronto."
             highlight="Economize horas"
           />
           <FeatureCard
@@ -278,19 +313,19 @@ const Index = () => {
           <FeatureCard
             icon={<MessageSquare className="w-10 h-10" />}
             title="WhatsApp Integrado"
-            description="Botão direto pro WhatsApp. Cliente escolhe: chat ou fala com você. Mais contatos qualificados."
+            description="Botão direto pro WhatsApp. Cliente escolhe: chat automático ou fala com você. Mais contatos qualificados."
             highlight="Mais leads"
           />
           <FeatureCard
             icon={<Bot className="w-10 h-10" />}
             title="Aprende Sozinho"
-            description="Lê páginas, posts, produtos, categorias. Quanto mais conteúdo, mais inteligente fica."
+            description="Lê páginas, posts WordPress, produtos WooCommerce, categorias. Quanto mais conteúdo, mais inteligente fica."
             highlight="Zero trabalho"
           />
           <FeatureCard
             icon={<Sparkles className="w-10 h-10" />}
             title="Personalização Total"
-            description="Nome, avatar, cor, mensagens, tom de voz. Cada cliente tem sua identidade única."
+            description="Nome, avatar, cor, mensagens, tom de voz. Cada cliente WordPress tem sua identidade única."
             highlight="Sua marca"
           />
           <FeatureCard
@@ -314,7 +349,7 @@ const Index = () => {
           <FeatureCard
             icon={<Infinity className="w-10 h-10" />}
             title="Uso Ilimitado"
-            description="Instale em 1, 10, 100 sites. Não importa. Licença vitalícia sem limites."
+            description="Instale em 1, 10, 100 sites WordPress. Não importa. Licença vitalícia sem limites."
             highlight="Sem barreiras"
           />
         </div>
@@ -326,8 +361,10 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Enquanto outros cobram R$47/mês para sempre...
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Quero Garantir Meu LedChat Agora
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+              Quero Garantir Meu LedChat Agora
+            </a>
           </Button>
         </div>
       </section>
@@ -357,7 +394,7 @@ const Index = () => {
       </section>
 
       {/* How It Works - Detailed */}
-      <section className="container py-20">
+      <section id="como-funciona" className="container py-20">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-primary/10 text-primary">SIMPLES ASSIM</Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -374,12 +411,12 @@ const Index = () => {
           <ProcessStep
             number="2"
             title="Receba por E-mail (até 24h)"
-            description="Plugin .zip + documentação completa + vídeo tutorial na sua caixa de entrada."
+            description="Plugin .zip para WordPress + documentação completa + vídeo tutorial na sua caixa de entrada."
           />
           <ProcessStep
             number="3"
             title="Instale no WordPress (2 minutos)"
-            description="Plugins > Adicionar novo > Upload > Ativar. Igual qualquer outro plugin."
+            description="Plugins > Adicionar novo > Upload > Ativar. Igual qualquer outro plugin WordPress."
           />
           <ProcessStep
             number="4"
@@ -389,18 +426,20 @@ const Index = () => {
           <ProcessStep
             number="5"
             title="Cole o Shortcode (10 segundos)"
-            description="Copie [ledchat] e cole onde quiser. Rodapé, popup, página específica. Funciona."
+            description="Copie [ledchat] e cole onde quiser no WordPress. Rodapé, popup, página específica. Funciona."
           />
           <ProcessStep
             number="6"
             title="LUCRE (pra sempre)"
-            description="Cobre R$300-1.200 a mais por projeto. Instale em dezenas de sites. Sem limite."
+            description="Cobre R$300-1.200 a mais por projeto. Instale em dezenas de sites WordPress. Sem limite."
           />
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-6">
-            Começar Agora - Apenas R$99
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-6">
+            <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+              Começar Agora - Apenas R$99
+            </a>
           </Button>
           <p className="mt-4 text-muted-foreground">
             Tempo total de setup: menos de 10 minutos
@@ -409,7 +448,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Comparison */}
-      <section className="bg-muted/30 py-20">
+      <section id="precos" className="bg-muted/30 py-20">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -479,7 +518,7 @@ const Index = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">Sites ilimitados</span>
+                  <span className="font-medium">Sites WordPress ilimitados</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
@@ -490,8 +529,10 @@ const Index = () => {
                   <span className="font-medium">Suporte prioritário</span>
                 </li>
               </ul>
-              <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
-                Garantir Por R$99 Agora
+              <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
+                <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+                  Garantir Por R$99 Agora
+                </a>
               </Button>
               <div className="text-center pt-4 border-t mt-6">
                 <div className="text-lg font-bold text-primary">
@@ -539,7 +580,7 @@ const Index = () => {
       </section>
 
       {/* ROI Calculator */}
-      <section className="container py-20">
+      <section id="roi" className="container py-20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -558,7 +599,7 @@ const Index = () => {
                       <span className="font-bold">R$300</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Projetos por mês:</span>
+                      <span>Projetos WordPress/mês:</span>
                       <span className="font-bold">×3</span>
                     </div>
                     <div className="h-px bg-border my-2"></div>
@@ -580,7 +621,7 @@ const Index = () => {
                       <span className="font-bold">R$800</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Projetos por mês:</span>
+                      <span>Projetos WordPress/mês:</span>
                       <span className="font-bold">×5</span>
                     </div>
                     <div className="h-px bg-border my-2"></div>
@@ -611,25 +652,27 @@ const Index = () => {
           </Card>
 
           <div className="text-center mt-8">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-6">
-              Sim, Quero Esse ROI Agora
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-6">
+              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+                Sim, Quero Esse ROI Agora
+              </a>
             </Button>
             <p className="mt-4 text-muted-foreground">
-              Você se paga no PRIMEIRO projeto
+              Você se paga no PRIMEIRO projeto WordPress
             </p>
           </div>
         </div>
       </section>
 
       {/* Use Cases */}
-      <section className="bg-muted/30 py-20">
+      <section id="casos-de-uso" className="bg-muted/30 py-20">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Funciona para <span className="text-primary">qualquer nicho</span>
+              Funciona para <span className="text-primary">qualquer nicho</span> WordPress
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Não importa o tipo de cliente. O LedChat se adapta e vende.
+              Não importa o tipo de cliente. O LedChat se adapta e vende em qualquer site WordPress.
             </p>
           </div>
 
@@ -638,7 +681,7 @@ const Index = () => {
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Bot className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-bold mb-2">E-commerce</h3>
+              <h3 className="font-bold mb-2">E-commerce WooCommerce</h3>
               <p className="text-sm text-muted-foreground">
                 Responde sobre produtos, estoque, frete. Reduz abandono de carrinho em 40%.
               </p>
@@ -677,14 +720,14 @@ const Index = () => {
               + Restaurantes, Clínicas, Advogados, Consultores, Agências, SaaS, Turismo...
             </p>
             <p className="text-2xl font-bold">
-              Se vende online, o LedChat <span className="text-primary">aumenta as vendas</span>.
+              Se vende online com WordPress, o LedChat <span className="text-primary">aumenta as vendas</span>.
             </p>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="container py-20">
+      <section id="depoimentos" className="container py-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Quem já está <span className="text-primary">faturando mais</span>
@@ -700,7 +743,7 @@ const Index = () => {
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
             </div>
             <p className="mb-4 text-muted-foreground">
-              "Comecei a cobrar R$400 a mais em cada site que desenvolvo só por instalar o LedChat. 
+              "Comecei a cobrar R$400 a mais em cada site WordPress que desenvolvo só por instalar o LedChat. 
               Os clientes <strong>adoram</strong> e eu ganho mais sem trabalhar mais. É dinheiro fácil!"
             </p>
             <div className="flex items-center gap-3">
@@ -719,7 +762,7 @@ const Index = () => {
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
             </div>
             <p className="mb-4 text-muted-foreground">
-              "Meus clientes de marketing digital <strong>dobraram as vendas</strong> depois que instalei o LedChat. 
+              "Meus clientes de marketing digital <strong>dobraram as vendas</strong> depois que instalei o LedChat nos sites WordPress. 
               Agora eles me pagam mensalidade só para manter o plugin atualizado. Genial!"
             </p>
             <div className="flex items-center gap-3">
@@ -738,7 +781,7 @@ const Index = () => {
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
             </div>
             <p className="mb-4 text-muted-foreground">
-              "Vendi o LedChat como um <strong>pacote premium por R$1.200</strong> para um cliente. 
+              "Vendi o LedChat como um <strong>pacote premium por R$1.200</strong> para um cliente WordPress. 
               Ele pagou na hora porque viu o assistente respondendo dúvidas sozinho. Melhor investimento!"
             </p>
             <div className="flex items-center gap-3">
@@ -755,7 +798,7 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section className="bg-muted/30 py-20">
+      <section id="faq" className="bg-muted/30 py-20">
         <div className="container max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -769,23 +812,23 @@ const Index = () => {
           <div className="space-y-4">
             <FAQItem
               question="Preciso saber programar para usar o LedChat?"
-              answer="NÃO. Se você sabe instalar um plugin no WordPress (literalmente clicar 3 botões), você consegue usar o LedChat. É mais fácil que configurar um tema."
+              answer="NÃO. Se você sabe instalar um plugin no WordPress (literalmente clicar 3 botões), você consegue usar o LedChat. É mais fácil que configurar um tema WordPress."
             />
             <FAQItem
               question="Funciona com WooCommerce?"
-              answer="SIM. E essa é uma das melhores partes. O LedChat lê TODOS os produtos, categorias, variações e responde sobre eles automaticamente. É como ter um vendedor que conhece TODO o catálogo."
+              answer="SIM. E essa é uma das melhores partes. O LedChat lê TODOS os produtos, categorias, variações do WooCommerce e responde sobre eles automaticamente. É como ter um vendedor que conhece TODO o catálogo."
             />
             <FAQItem
               question="A IA é realmente gratuita?"
               answer="SIM. 100% gratuita. Sem tokens, sem API keys, sem mensalidades. Você paga R$99 uma vez e a IA funciona para sempre sem custo adicional. Zero pegadinhas."
             />
             <FAQItem
-              question="Posso usar em quantos sites?"
-              answer="QUANTOS VOCÊ QUISER. Licença ilimitada. Instale em 1 site, 10, 50, 100... não importa. Mesmo investimento de R$99."
+              question="Posso usar em quantos sites WordPress?"
+              answer="QUANTOS VOCÊ QUISER. Licença ilimitada. Instale em 1 site, 10, 50, 100 sites WordPress... não importa. Mesmo investimento de R$99."
             />
             <FAQItem
               question="Como recebo após a compra?"
-              answer="Em até 24 horas você recebe um e-mail com: plugin .zip, documentação completa e vídeo tutorial passo a passo. Tudo pronto para usar."
+              answer="Em até 24 horas você recebe um e-mail com: plugin .zip para WordPress, documentação completa e vídeo tutorial passo a passo. Tudo pronto para usar."
             />
             <FAQItem
               question="E se eu não gostar?"
@@ -793,18 +836,18 @@ const Index = () => {
             />
             <FAQItem
               question="Preciso de conhecimentos de IA?"
-              answer="ZERO. O LedChat já vem pronto. Você só configura o básico (nome, cor, mensagem) e ele aprende sozinho com o conteúdo do site."
+              answer="ZERO. O LedChat já vem pronto. Você só configura o básico (nome, cor, mensagem) e ele aprende sozinho com o conteúdo do site WordPress."
             />
             <FAQItem
-              question="Funciona em sites que já estão no ar?"
-              answer="SIM. Instale em sites novos ou existentes. Não quebra nada, não conflita com outros plugins. Funciona com qualquer tema WordPress moderno."
+              question="Funciona em sites WordPress que já estão no ar?"
+              answer="SIM. Instale em sites WordPress novos ou existentes. Não quebra nada, não conflita com outros plugins. Funciona com qualquer tema WordPress moderno."
             />
           </div>
         </div>
       </section>
 
       {/* Urgency Section */}
-      <section className="container py-20">
+      <section id="urgencia" className="container py-20">
         <Card className="p-12 bg-gradient-to-br from-destructive/10 to-destructive/5 border-destructive/20">
           <div className="max-w-3xl mx-auto text-center">
             <div className="text-5xl mb-6">⚠️</div>
@@ -818,10 +861,10 @@ const Index = () => {
               </p>
               <p>
                 <strong>2. Seus concorrentes já estão usando.</strong> Enquanto você lê isso, alguém na sua cidade 
-                está instalando o LedChat e cobrando mais por projetos similares aos seus.
+                está instalando o LedChat em sites WordPress e cobrando mais por projetos similares aos seus.
               </p>
               <p>
-                <strong>3. Cada dia que passa é dinheiro perdido.</strong> Se você faz 3 sites por mês, 
+                <strong>3. Cada dia que passa é dinheiro perdido.</strong> Se você faz 3 sites WordPress por mês, 
                 está deixando R$900-1.200 na mesa TODO MÊS que não tem o LedChat.
               </p>
             </div>
@@ -830,11 +873,13 @@ const Index = () => {
                 Quanto você perdeu este mês por não ter isto?
               </p>
               <p className="text-muted-foreground">
-                (Multiplique o número de projetos que você entregou por R$400)
+                (Multiplique o número de projetos WordPress que você entregou por R$400)
               </p>
             </div>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-xl px-16 py-8">
-              Parar de Perder Dinheiro AGORA
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-xl px-16 py-8">
+              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+                Parar de Perder Dinheiro AGORA
+              </a>
             </Button>
             <p className="mt-4 text-sm text-muted-foreground">
               Acesso imediato após pagamento confirmado
@@ -858,7 +903,7 @@ const Index = () => {
               <div className="text-4xl mb-3">❌</div>
               <h3 className="font-bold text-xl mb-3">Opção 1: Não fazer nada</h3>
               <ul className="space-y-2 text-sm opacity-90">
-                <li>• Continuar entregando sites "comuns"</li>
+                <li>• Continuar entregando sites WordPress "comuns"</li>
                 <li>• Cobrar o mesmo de sempre</li>
                 <li>• Ver concorrentes passando você</li>
                 <li>• Perder R$900+ por mês</li>
@@ -871,7 +916,7 @@ const Index = () => {
               <h3 className="font-bold text-xl mb-3">Opção 2: Agir agora</h3>
               <ul className="space-y-2 text-sm opacity-90">
                 <li>• Investir R$99 uma única vez</li>
-                <li>• Cobrar R$400-1.200 a mais por projeto</li>
+                <li>• Cobrar R$400-1.200 a mais por projeto WordPress</li>
                 <li>• Se diferenciar da concorrência</li>
                 <li>• Ganhar R$10.800+ no primeiro ano</li>
                 <li>• Ter orgulho do que entrega</li>
@@ -881,11 +926,14 @@ const Index = () => {
 
           <div className="space-y-6">
             <Button 
+              asChild
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 text-xl px-16 py-8 shadow-2xl"
             >
-              SIM! Quero Faturar Mais Agora
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+                SIM! Quero Faturar Mais Agora
+                <ArrowRight className="ml-2 w-6 h-6" />
+              </a>
             </Button>
             
             <div className="flex items-center justify-center gap-8 text-sm opacity-90">
@@ -918,40 +966,40 @@ const Index = () => {
                 <span className="font-bold text-xl">LedChat</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                O assistente virtual que multiplica seu faturamento
+                O assistente virtual para WordPress que multiplica seu faturamento
               </p>
             </div>
             <div>
               <h3 className="font-bold mb-4">Produto</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Funcionalidades</li>
-                <li>Preços</li>
-                <li>Casos de Uso</li>
-                <li>ROI Calculator</li>
+                <li><a href="#recursos" className="hover:text-primary transition-colors">Funcionalidades</a></li>
+                <li><a href="#precos" className="hover:text-primary transition-colors">Preços</a></li>
+                <li><a href="#casos-de-uso" className="hover:text-primary transition-colors">Casos de Uso</a></li>
+                <li><a href="#roi" className="hover:text-primary transition-colors">ROI Calculator</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-bold mb-4">Suporte</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Documentação</li>
-                <li>Tutorial em Vídeo</li>
-                <li>FAQ</li>
-                <li>Contato</li>
+                <li><a href="#como-funciona" className="hover:text-primary transition-colors">Documentação</a></li>
+                <li><a href="#como-funciona" className="hover:text-primary transition-colors">Tutorial em Vídeo</a></li>
+                <li><a href="#faq" className="hover:text-primary transition-colors">FAQ</a></li>
+                <li><a href="mailto:contato@ledchat.com.br" className="hover:text-primary transition-colors">Contato</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-bold mb-4">Legal</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Termos de Uso</li>
-                <li>Política de Privacidade</li>
-                <li>Garantia 7 Dias</li>
-                <li>Reembolso</li>
+                <li><a href="#" className="hover:text-primary transition-colors">Termos de Uso</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Garantia 7 Dias</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Reembolso</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t pt-8 text-center text-sm text-muted-foreground">
             <p>© 2025 LedChat - Todos os direitos reservados. Desenvolvido por Led Marketing.</p>
-            <p className="mt-2">CNPJ: XX.XXX.XXX/0001-XX</p>
+            <p className="mt-2">Plugin WordPress para Assistentes Virtuais com IA</p>
           </div>
         </div>
       </footer>
@@ -968,8 +1016,10 @@ const Index = () => {
               <div className="font-bold">R$99 • Oferta Limitada</div>
             </div>
           </div>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
-            Garantir Agora
+          <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
+            <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+              Garantir Agora
+            </a>
           </Button>
         </div>
       </div>
