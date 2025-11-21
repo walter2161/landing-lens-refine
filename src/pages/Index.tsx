@@ -22,12 +22,32 @@ import {
   Award,
   Globe
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChatBot } from "@/components/ChatBot";
 
 const PURCHASE_LINK = "https://pag.ae/81es9xYnQ/button";
 
 const Index = () => {
+  const [showFloatingFooter, setShowFloatingFooter] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const faqSection = document.getElementById('faq');
+      if (!faqSection) return;
+
+      const faqTop = faqSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // Mostra o rodapé quando a seção FAQ está visível (últimas 2 seções)
+      setShowFloatingFooter(faqTop < windowHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Verifica na montagem
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -794,24 +814,26 @@ const Index = () => {
       </footer>
 
       {/* Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-primary text-primary-foreground py-4 shadow-2xl z-50 border-t-4 border-primary-foreground/20">
-        <div className="container flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="hidden md:block">
-              <div className="font-bold text-lg">Oferta Especial - R$99</div>
-              <div className="text-sm opacity-90">Licença vitalícia • Uso ilimitado</div>
+      {showFloatingFooter && (
+        <div className="fixed bottom-0 left-0 right-0 bg-primary text-primary-foreground py-4 shadow-2xl z-50 border-t-4 border-primary-foreground/20 animate-in slide-in-from-bottom-4">
+          <div className="container flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="hidden md:block">
+                <div className="font-bold text-lg">Oferta Especial - R$99</div>
+                <div className="text-sm opacity-90">Licença vitalícia • Uso ilimitado</div>
+              </div>
+              <div className="md:hidden">
+                <div className="font-bold">R$99 • Oferta Limitada</div>
+              </div>
             </div>
-            <div className="md:hidden">
-              <div className="font-bold">R$99 • Oferta Limitada</div>
-            </div>
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
+              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+                Garantir Agora
+              </a>
+            </Button>
           </div>
-          <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
-            <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-              Garantir Agora
-            </a>
-          </Button>
         </div>
-      </div>
+      )}
 
       {/* ChatBot Flutuante */}
       <ChatBot />
