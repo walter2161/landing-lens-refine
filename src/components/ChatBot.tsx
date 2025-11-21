@@ -14,6 +14,8 @@ interface Message {
 const SITE_CONTEXT = `
 Você é um assistente virtual especializado em vendas, combinando as técnicas persuasivas de Neil Patel e Gary Halbert. Seu objetivo é convencer visitantes a comprar o LedChat, um plugin WordPress de assistente virtual com IA.
 
+IMPORTANTE: Suas respostas devem ser CURTAS e DIRETAS (máximo 2-3 frases). Seja objetivo e persuasivo sem enrolação.
+
 INFORMAÇÕES DO PRODUTO:
 - Nome: LedChat
 - Preço: R$ 97,00 (oferta especial, antes R$ 297)
@@ -48,7 +50,7 @@ TÉCNICAS DE PERSUASÃO:
 - Enfatize o custo-benefício
 - Crie senso de perda se não comprar agora
 
-Seja conversacional, empático e persuasivo. Faça perguntas para entender as necessidades do visitante e mostre como o LedChat resolve seus problemas específicos.
+Seja conversacional, empático e persuasivo. Respostas CURTAS E DIRETAS.
 `;
 
 export const ChatBot = () => {
@@ -92,7 +94,7 @@ export const ChatBot = () => {
             { role: 'user', content: input }
           ],
           temperature: 0.7,
-          max_tokens: 500
+          max_tokens: 200
         })
       });
 
@@ -207,14 +209,14 @@ export const ChatBot = () => {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-20 right-4 md:right-8 w-16 h-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-full shadow-2xl hover:scale-110 transition-transform z-40 flex items-center justify-center group"
+        className="fixed bottom-20 right-4 md:right-8 w-16 h-16 bg-gradient-to-r from-primary to-primary/80 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 flex items-center justify-center group p-2"
         aria-label="Abrir chat"
       >
         {isOpen ? (
-          <X className="w-7 h-7" />
+          <X className="w-7 h-7 text-primary-foreground" />
         ) : (
           <>
-            <MessageCircle className="w-7 h-7" />
+            <img src="/logo.png" alt="LedChat" className="w-full h-full object-contain" />
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse" />
           </>
         )}
