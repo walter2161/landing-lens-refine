@@ -53,7 +53,11 @@ TÉCNICAS DE PERSUASÃO:
 Seja conversacional, empático e persuasivo. Respostas CURTAS E DIRETAS.
 `;
 
-export const ChatBot = () => {
+interface ChatBotProps {
+  showFloatingFooter?: boolean;
+}
+
+export const ChatBot = ({ showFloatingFooter = false }: ChatBotProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -127,7 +131,7 @@ export const ChatBot = () => {
     <>
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-4 md:right-8 w-[90vw] md:w-96 h-[500px] bg-background border-2 border-primary shadow-2xl rounded-2xl flex flex-col z-40 animate-in slide-in-from-bottom-4">
+        <div className={`fixed ${showFloatingFooter ? 'bottom-[70px]' : 'bottom-[30px]'} right-4 md:right-8 w-[90vw] md:w-96 h-[500px] bg-background border-2 border-primary shadow-2xl rounded-2xl flex flex-col z-40 animate-in slide-in-from-bottom-4`}>
           {/* Header */}
           <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground p-4 rounded-t-2xl flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -209,7 +213,7 @@ export const ChatBot = () => {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-20 right-4 md:right-8 w-16 h-16 bg-gradient-to-r from-primary to-primary/80 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 flex items-center justify-center group p-2"
+        className={`fixed ${showFloatingFooter ? 'bottom-[70px]' : 'bottom-[10px]'} right-4 md:right-8 w-16 h-16 bg-gradient-to-r from-primary to-primary/80 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-40 flex items-center justify-center group p-2`}
         aria-label="Abrir chat"
       >
         {isOpen ? (

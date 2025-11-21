@@ -102,7 +102,7 @@ const Index = () => {
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted-foreground">
-              ⚡ Acesso imediato por e-mail • 🔒 Garantia de 7 dias • ⭐ Suporte prioritário
+              ⚡ Acesso imediato por e-mail • 🔒 Licença Vitalícia • ⭐ Atualizações Gratuitas
             </p>
           </div>
           <div className="relative">
@@ -147,7 +147,7 @@ const Index = () => {
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Award className="w-5 h-5" />
-              <span className="font-medium">Garantia 7 Dias</span>
+              <span className="font-medium">Uso Ilimitado</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Star className="w-5 h-5" />
@@ -692,8 +692,8 @@ const Index = () => {
               answer="Em até 24 horas você recebe um e-mail com: plugin .zip para WordPress, documentação completa e vídeo tutorial passo a passo. Tudo pronto para usar."
             />
             <FAQItem
-              question="E se eu não gostar?"
-              answer="7 dias de garantia total. Não gostou? Peça reembolso. Sem perguntas, sem burocracia. Mas honestamente? Ninguém pediu ainda."
+              question="Vou receber atualizações?"
+              answer="Sim! Sua licença é vitalícia e inclui todas as atualizações futuras sem custo adicional. Uma vez comprado, você tem acesso para sempre."
             />
           </div>
         </div>
@@ -754,7 +754,7 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5" />
-                <span>Garantia de 7 Dias</span>
+                <span>Atualizações Gratuitas</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5" />
@@ -801,8 +801,8 @@ const Index = () => {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="#" className="hover:text-primary transition-colors">Termos de Uso</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Garantia 7 Dias</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Reembolso</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Licença Vitalícia</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Perguntas Frequentes</a></li>
               </ul>
             </div>
           </div>
@@ -836,7 +836,7 @@ const Index = () => {
       )}
 
       {/* ChatBot Flutuante */}
-      <ChatBot />
+      <ChatBot showFloatingFooter={showFloatingFooter} />
     </div>
   );
 };
