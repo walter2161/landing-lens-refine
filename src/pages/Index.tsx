@@ -86,8 +86,8 @@ const Index = () => {
           </div>
           <div className="relative">
             <img 
-              src="https://image.pollinations.ai/prompt/Modern%20chatbot%20interface%20on%20computer%20screen,%20professional%20website,%20blue%20theme,%20customer%20support,%20AI%20assistant,%20WordPress%20dashboard,%20clean%20UI,%20high%20quality,%20digital%20illustration?width=800&height=800&nologo=true&seed=123"
-              alt="LedChat Interface"
+              src="https://image.pollinations.ai/prompt/Happy%20professional%20woman%20smiling,%20working%20on%20modern%20laptop,%20bright%20office,%20natural%20daylight,%20business%20casual%20attire,%20successful%20entrepreneur,%20photorealistic,%20high%20quality%20portrait?width=800&height=800&nologo=true&seed=123"
+              alt="Profissional usando LedChat"
               className="rounded-2xl shadow-2xl"
             />
             <div className="absolute -bottom-6 -left-6 bg-white dark:bg-card p-4 rounded-xl shadow-lg border">
@@ -238,9 +238,9 @@ const Index = () => {
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="text-center">
               <img 
-                src="https://image.pollinations.ai/prompt/AI%20artificial%20intelligence%20brain%20icon,%20glowing%20neural%20network,%20digital%20circuits,%20blue%20purple%20gradient,%20modern%20tech,%20transparent%20background?width=400&height=400&nologo=true&seed=456"
-                alt="IA Inteligente"
-                className="w-32 h-32 mx-auto mb-4"
+                src="https://image.pollinations.ai/prompt/Professional%20tech%20team%20member,%20male,%2035%20years,%20friendly%20smile,%20business%20casual,%20clean%20studio%20background,%20headshot%20portrait,%20photorealistic?width=400&height=400&nologo=true&seed=456"
+                alt="Especialista em IA"
+                className="w-32 h-32 mx-auto mb-4 rounded-full object-cover"
               />
               <h3 className="font-bold text-lg mb-2">IA que Entende Seu Negócio</h3>
               <p className="text-muted-foreground text-sm">
@@ -249,9 +249,9 @@ const Index = () => {
             </div>
             <div className="text-center">
               <img 
-                src="https://image.pollinations.ai/prompt/Chat%20conversation%20bubbles,%20natural%20language%20processing,%20friendly%20communication,%20blue%20theme,%20modern%20design,%20icon?width=400&height=400&nologo=true&seed=789"
-                alt="Conversação Natural"
-                className="w-32 h-32 mx-auto mb-4"
+                src="https://image.pollinations.ai/prompt/Friendly%20customer%20support%20woman,%2028%20years,%20warm%20smile,%20professional%20attire,%20modern%20office,%20natural%20lighting,%20portrait%20photo?width=400&height=400&nologo=true&seed=789"
+                alt="Atendimento Natural"
+                className="w-32 h-32 mx-auto mb-4 rounded-full object-cover"
               />
               <h3 className="font-bold text-lg mb-2">Conversação Natural</h3>
               <p className="text-muted-foreground text-sm">
@@ -260,9 +260,9 @@ const Index = () => {
             </div>
             <div className="text-center">
               <img 
-                src="https://image.pollinations.ai/prompt/Rising%20graph%20chart,%20sales%20growth,%20conversion%20optimization,%20success%20arrow,%20blue%20gradient,%20professional%20icon?width=400&height=400&nologo=true&seed=101"
-                alt="Conversão Automática"
-                className="w-32 h-32 mx-auto mb-4"
+                src="https://image.pollinations.ai/prompt/Successful%20business%20owner,%20male,%2040%20years,%20confident%20expression,%20suit,%20professional%20studio%20photo,%20clean%20background?width=400&height=400&nologo=true&seed=101"
+                alt="Especialista em Vendas"
+                className="w-32 h-32 mx-auto mb-4 rounded-full object-cover"
               />
               <h3 className="font-bold text-lg mb-2">Conversão Automática</h3>
               <p className="text-muted-foreground text-sm">
@@ -580,9 +580,11 @@ const Index = () => {
                 Os clientes <strong>adoram</strong> e eu ganho mais sem trabalhar mais. É dinheiro fácil!"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                  CO
-                </div>
+                <img 
+                  src="https://image.pollinations.ai/prompt/Brazilian%20male%20web%20developer,%2030%20years%20old,%20friendly%20smile,%20casual%20t-shirt,%20modern%20workspace,%20natural%20lighting,%20professional%20headshot?width=100&height=100&nologo=true&seed=200"
+                  alt="Carlos Oliveira"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
                 <div>
                   <div className="font-semibold text-white">Carlos Oliveira</div>
                   <div className="text-sm text-slate-400">Desenvolvedor Web - SP</div>
@@ -599,9 +601,11 @@ const Index = () => {
                 Agora eles me pagam mensalidade só para manter o plugin atualizado. Genial!"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                  MS
-                </div>
+                <img 
+                  src="https://image.pollinations.ai/prompt/Professional%20Brazilian%20woman,%2032%20years%20old,%20warm%20smile,%20business%20casual%20blouse,%20bright%20studio%20photo,%20clean%20background,%20headshot%20portrait?width=100&height=100&nologo=true&seed=201"
+                  alt="Maria Silva"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
                 <div>
                   <div className="font-semibold text-white">Maria Silva</div>
                   <div className="text-sm text-slate-400">Consultora de Marketing - RJ</div>
@@ -618,9 +622,11 @@ const Index = () => {
                 Ele pagou na hora porque viu o assistente respondendo dúvidas sozinho. Melhor investimento!"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                  RS
-                </div>
+                <img 
+                  src="https://image.pollinations.ai/prompt/Brazilian%20male%20entrepreneur,%2038%20years,%20confident%20expression,%20polo%20shirt,%20modern%20office,%20natural%20light,%20professional%20portrait?width=100&height=100&nologo=true&seed=202"
+                  alt="Rafael Souza"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
                 <div>
                   <div className="font-semibold text-white">Rafael Souza</div>
                   <div className="text-sm text-slate-400">Empreendedor Digital - MG</div>
