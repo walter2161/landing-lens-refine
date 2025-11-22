@@ -123,7 +123,7 @@ const Index = () => {
                 </div>
                 <div>
                   <div className="font-bold">+347%</div>
-                  <div className="text-sm text-muted-foreground">Conversões</div>
+                  <div className="text-sm text-muted-foreground">{t.statsConversionLabel}</div>
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@ const Index = () => {
                 </div>
                 <div>
                   <div className="font-bold">24/7</div>
-                  <div className="text-sm text-muted-foreground">Atendimento</div>
+                  <div className="text-sm text-muted-foreground">{t.statsAttendanceLabel}</div>
                 </div>
               </div>
             </div>
@@ -216,22 +216,20 @@ const Index = () => {
               <div className="flex items-start gap-4 mb-6">
                 <Globe className="w-8 h-8 text-primary flex-shrink-0" />
                 <div>
-                  <h3 className="text-2xl font-bold mb-3">Por que WordPress?</h3>
-                  <p className="text-lg text-muted-foreground mb-4">
-                    WordPress é a plataforma de <strong>43% de TODOS os sites da internet</strong>. Mais de 455 milhões de sites ativos no mundo todo. 
-                  </p>
+                  <h3 className="text-2xl font-bold mb-3">{t.whyWordPressTitle}</h3>
+                  <p className="text-lg text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t.whyWordPressDesc }} />
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>A plataforma mais usada mundialmente para e-commerce e sites corporativos</span>
+                      <span>{t.whyWordPress1}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Fácil de usar, poderosa e com infinitas possibilidades</span>
+                      <span>{t.whyWordPress2}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Com o LedChat, você transforma qualquer site WordPress em uma máquina de vendas lucrativa</span>
+                      <span>{t.whyWordPress3}</span>
                     </li>
                   </ul>
                 </div>
@@ -243,34 +241,34 @@ const Index = () => {
             <div className="text-center">
               <img 
                 src="https://image.pollinations.ai/prompt/Professional%20tech%20team%20member,%20male,%2035%20years,%20friendly%20smile,%20business%20casual,%20clean%20studio%20background,%20headshot%20portrait,%20photorealistic?width=400&height=400&nologo=true&seed=456"
-                alt="Especialista em IA"
+                alt={t.card1Title}
                 className="w-32 h-32 mx-auto mb-4 rounded-full object-cover"
               />
-              <h3 className="font-bold text-lg mb-2">IA que Entende Seu Negócio</h3>
+              <h3 className="font-bold text-lg mb-2">{t.card1Title}</h3>
               <p className="text-muted-foreground text-sm">
-                Absorve automaticamente todo conteúdo do WordPress e responde com precisão
+                {t.card1Desc}
               </p>
             </div>
             <div className="text-center">
               <img 
                 src="https://image.pollinations.ai/prompt/Friendly%20customer%20support%20woman,%2028%20years,%20warm%20smile,%20professional%20attire,%20modern%20office,%20natural%20lighting,%20portrait%20photo?width=400&height=400&nologo=true&seed=789"
-                alt="Atendimento Natural"
+                alt={t.card2Title}
                 className="w-32 h-32 mx-auto mb-4 rounded-full object-cover"
               />
-              <h3 className="font-bold text-lg mb-2">Conversação Natural</h3>
+              <h3 className="font-bold text-lg mb-2">{t.card2Title}</h3>
               <p className="text-muted-foreground text-sm">
-                Interage como um humano, tira dúvidas e guia o cliente até a compra
+                {t.card2Desc}
               </p>
             </div>
             <div className="text-center">
               <img 
                 src="https://image.pollinations.ai/prompt/Successful%20business%20owner,%20male,%2040%20years,%20confident%20expression,%20suit,%20professional%20studio%20photo,%20clean%20background?width=400&height=400&nologo=true&seed=101"
-                alt="Especialista em Vendas"
+                alt={t.card3Title}
                 className="w-32 h-32 mx-auto mb-4 rounded-full object-cover"
               />
-              <h3 className="font-bold text-lg mb-2">Conversão Automática</h3>
+              <h3 className="font-bold text-lg mb-2">{t.card3Title}</h3>
               <p className="text-muted-foreground text-sm">
-                Reduz abandono, aumenta ticket médio e fecha vendas enquanto você dorme
+                {t.card3Desc}
               </p>
             </div>
           </div>
@@ -288,44 +286,44 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <FeatureCard
               icon={<Zap className="w-10 h-10" />}
-              title="Instalação Instantânea"
-              description="5 minutos do upload até funcionar no WordPress. Plugin > Ativar > Configurar > Shortcode. Pronto."
-              highlight="Economize horas"
+              title={t.feature1Title}
+              description={t.feature1Desc}
+              highlight={t.feature1Highlight}
               dark
             />
             <FeatureCard
               icon={<DollarSign className="w-10 h-10" />}
-              title="IA 100% Gratuita"
-              description="Zero custo com tokens, zero mensalidade. A IA é GRÁTIS para sempre. Lucro puro pra você."
-              highlight="Zero custos"
+              title={t.feature2Title}
+              description={t.feature2Desc}
+              highlight={t.feature2Highlight}
               dark
             />
             <FeatureCard
               icon={<MessageSquare className="w-10 h-10" />}
-              title="WhatsApp Integrado"
-              description="Botão direto pro WhatsApp. Cliente escolhe: chat automático ou fala com você. Mais contatos qualificados."
-              highlight="Mais leads"
+              title={t.feature3Title}
+              description={t.feature3Desc}
+              highlight={t.feature3Highlight}
               dark
             />
             <FeatureCard
               icon={<Sparkles className="w-10 h-10" />}
-              title="Aprende Sozinho"
-              description="Lê páginas, posts WordPress, produtos WooCommerce, categorias. Quanto mais conteúdo, mais inteligente fica."
-              highlight="Zero trabalho"
+              title={t.feature4Title}
+              description={t.feature4Desc}
+              highlight={t.feature4Highlight}
               dark
             />
             <FeatureCard
               icon={<TrendingUp className="w-10 h-10" />}
-              title="Aumenta Conversões"
-              description="Resposta imediata = menos abandono. Clientes relatam +150% em vendas online."
-              highlight="Mais vendas"
+              title={t.feature5Title}
+              description={t.feature5Desc}
+              highlight={t.feature5Highlight}
               dark
             />
             <FeatureCard
               icon={<Clock className="w-10 h-10" />}
-              title="Trabalha 24/7"
-              description="Fim de semana, feriado, madrugada. Seu assistente NUNCA tira férias."
-              highlight="Sempre ativo"
+              title={t.feature6Title}
+              description={t.feature6Desc}
+              highlight={t.feature6Highlight}
               dark
             />
           </div>
@@ -346,19 +344,19 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-5xl font-bold mb-2">500+</div>
-              <div className="text-primary-foreground/80">Profissionais usando</div>
+              <div className="text-primary-foreground/80">{t.statsUsersLabel}</div>
             </div>
             <div>
               <div className="text-5xl font-bold mb-2">+347%</div>
-              <div className="text-primary-foreground/80">Média de conversão</div>
+              <div className="text-primary-foreground/80">{t.statsConversionAvg}</div>
             </div>
             <div>
               <div className="text-5xl font-bold mb-2">24/7</div>
-              <div className="text-primary-foreground/80">Atendimento automático</div>
+              <div className="text-primary-foreground/80">{t.statsAttendanceAuto}</div>
             </div>
             <div>
               <div className="text-5xl font-bold mb-2">R$0</div>
-              <div className="text-primary-foreground/80">Custo de IA mensal</div>
+              <div className="text-primary-foreground/80">{t.statsAICost}</div>
             </div>
           </div>
         </div>
@@ -399,121 +397,121 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <Card className="p-6 relative opacity-60">
-              <Badge className="mb-4" variant="outline">Outros Plugins</Badge>
-              <div className="text-3xl font-bold mb-2">R$47<span className="text-lg font-normal">/mês</span></div>
-              <p className="text-sm text-muted-foreground mb-6">Para sempre...</p>
+              <Badge className="mb-4" variant="outline">{t.comparisonOthers}</Badge>
+              <div className="text-3xl font-bold mb-2">{t.comparisonOthersPrice}<span className="text-lg font-normal">{t.comparisonOthersMonth}</span></div>
+              <p className="text-sm text-muted-foreground mb-6">{t.comparisonOthersSubtitle}</p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2 text-sm">
                   <CheckCircle2 className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span>Chatbot básico</span>
+                  <span>{t.comparisonOthers1}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <CheckCircle2 className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span>Respostas limitadas</span>
+                  <span>{t.comparisonOthers2}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <CheckCircle2 className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span>Suporte lento</span>
+                  <span>{t.comparisonOthers3}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <span className="text-destructive">✗</span>
-                  <span>Sem integração WooCommerce</span>
+                  <span>{t.comparisonOthers4}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <span className="text-destructive">✗</span>
-                  <span>Paga todo mês</span>
+                  <span>{t.comparisonOthers5}</span>
                 </li>
               </ul>
               <div className="text-center pt-4 border-t">
                 <div className="text-lg font-bold text-muted-foreground">
-                  R$564/ano
+                  {t.comparisonOthersTotal}
                 </div>
-                <div className="text-sm text-muted-foreground">Todo santo ano</div>
+                <div className="text-sm text-muted-foreground">{t.comparisonOthersTotalSub}</div>
               </div>
             </Card>
 
             <Card className="p-8 relative border-4 border-primary shadow-2xl transform scale-105">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <Badge className="bg-primary text-primary-foreground px-6 py-2 text-sm">
-                  MELHOR ESCOLHA
+                  {t.comparisonBest}
                 </Badge>
               </div>
-              <Badge className="mb-4 bg-primary text-primary-foreground">LedChat</Badge>
+              <Badge className="mb-4 bg-primary text-primary-foreground">{t.comparisonLedChat}</Badge>
               <div className="mb-2">
-                <span className="text-2xl line-through text-muted-foreground">R$450</span>
+                <span className="text-2xl line-through text-muted-foreground">{t.comparisonLedChatWas}</span>
               </div>
-              <div className="text-5xl font-bold mb-2 text-primary">R$99<span className="text-lg font-normal">/única vez</span></div>
-              <p className="text-sm text-muted-foreground mb-6">Licença vitalícia</p>
+              <div className="text-5xl font-bold mb-2 text-primary">{t.comparisonLedChatNow}<span className="text-lg font-normal">{t.comparisonLedChatOnce}</span></div>
+              <p className="text-sm text-muted-foreground mb-6">{t.comparisonLedChatLicense}</p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">IA avançada GRÁTIS</span>
+                  <span className="font-medium">{t.comparisonLedChat1}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">Integração WooCommerce</span>
+                  <span className="font-medium">{t.comparisonLedChat2}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">WhatsApp integrado</span>
+                  <span className="font-medium">{t.comparisonLedChat3}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">Sites WordPress ilimitados</span>
+                  <span className="font-medium">{t.comparisonLedChat4}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">Atualizações vitalícias</span>
+                  <span className="font-medium">{t.comparisonLedChat5}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">Suporte prioritário</span>
+                  <span className="font-medium">{t.comparisonLedChat6}</span>
                 </li>
               </ul>
               <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
                 <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-                  Garantir Por R$99 Agora
+                  {t.comparisonLedChatCTA}
                 </a>
               </Button>
               <div className="text-center pt-4 border-t mt-6">
                 <div className="text-lg font-bold text-primary">
-                  Economize R$465
+                  {t.comparisonLedChatSave}
                 </div>
-                <div className="text-sm text-muted-foreground">No primeiro ano</div>
+                <div className="text-sm text-muted-foreground">{t.comparisonLedChatSaveSub}</div>
               </div>
             </Card>
 
             <Card className="p-6 relative opacity-60">
-              <Badge className="mb-4" variant="outline">Desenvolver do Zero</Badge>
-              <div className="text-3xl font-bold mb-2">R$5.000+</div>
-              <p className="text-sm text-muted-foreground mb-6">Investimento inicial</p>
+              <Badge className="mb-4" variant="outline">{t.comparisonCustom}</Badge>
+              <div className="text-3xl font-bold mb-2">{t.comparisonCustomPrice}</div>
+              <p className="text-sm text-muted-foreground mb-6">{t.comparisonCustomSubtitle}</p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2 text-sm">
                   <CheckCircle2 className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span>Contratar desenvolvedor</span>
+                  <span>{t.comparisonCustom1}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <CheckCircle2 className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span>2-3 meses de trabalho</span>
+                  <span>{t.comparisonCustom2}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <CheckCircle2 className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span>Custo com API OpenAI</span>
+                  <span>{t.comparisonCustom3}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <span className="text-destructive">✗</span>
-                  <span>Bugs e manutenção</span>
+                  <span>{t.comparisonCustom4}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <span className="text-destructive">✗</span>
-                  <span>Tempo perdido</span>
+                  <span>{t.comparisonCustom5}</span>
                 </li>
               </ul>
               <div className="text-center pt-4 border-t">
                 <div className="text-lg font-bold text-muted-foreground">
-                  Meses de trabalho
+                  {t.comparisonCustomTotal}
                 </div>
-                <div className="text-sm text-muted-foreground">+ custos contínuos</div>
+                <div className="text-sm text-muted-foreground">{t.comparisonCustomTotalSub}</div>
               </div>
             </Card>
           </div>
@@ -533,19 +531,16 @@ const Index = () => {
               <div className="flex gap-1 mb-4">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
               </div>
-              <p className="mb-4 text-slate-300">
-                "Comecei a cobrar R$400 a mais em cada site WordPress que desenvolvo só por instalar o LedChat. 
-                Os clientes <strong>adoram</strong> e eu ganho mais sem trabalhar mais. É dinheiro fácil!"
-              </p>
+              <p className="mb-4 text-slate-300" dangerouslySetInnerHTML={{ __html: t.testimonial1 }} />
               <div className="flex items-center gap-3">
                 <img 
                   src="https://image.pollinations.ai/prompt/Brazilian%20male%20web%20developer,%2030%20years%20old,%20friendly%20smile,%20casual%20t-shirt,%20modern%20workspace,%20natural%20lighting,%20professional%20headshot?width=100&height=100&nologo=true&seed=200"
-                  alt="Carlos Oliveira"
+                  alt={t.testimonial1Name}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-semibold text-white">Carlos Oliveira</div>
-                  <div className="text-sm text-slate-400">Desenvolvedor Web - SP</div>
+                  <div className="font-semibold text-white">{t.testimonial1Name}</div>
+                  <div className="text-sm text-slate-400">{t.testimonial1Role}</div>
                 </div>
               </div>
             </Card>
@@ -554,19 +549,16 @@ const Index = () => {
               <div className="flex gap-1 mb-4">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
               </div>
-              <p className="mb-4 text-slate-300">
-                "Meus clientes de marketing digital <strong>dobraram as vendas</strong> depois que instalei o LedChat nos sites WordPress. 
-                Agora eles me pagam mensalidade só para manter o plugin atualizado. Genial!"
-              </p>
+              <p className="mb-4 text-slate-300" dangerouslySetInnerHTML={{ __html: t.testimonial2 }} />
               <div className="flex items-center gap-3">
                 <img 
                   src="https://image.pollinations.ai/prompt/Professional%20Brazilian%20woman,%2032%20years%20old,%20warm%20smile,%20business%20casual%20blouse,%20bright%20studio%20photo,%20clean%20background,%20headshot%20portrait?width=100&height=100&nologo=true&seed=201"
-                  alt="Maria Silva"
+                  alt={t.testimonial2Name}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-semibold text-white">Maria Silva</div>
-                  <div className="text-sm text-slate-400">Consultora de Marketing - RJ</div>
+                  <div className="font-semibold text-white">{t.testimonial2Name}</div>
+                  <div className="text-sm text-slate-400">{t.testimonial2Role}</div>
                 </div>
               </div>
             </Card>
@@ -575,19 +567,16 @@ const Index = () => {
               <div className="flex gap-1 mb-4">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
               </div>
-              <p className="mb-4 text-slate-300">
-                "Vendi o LedChat como um <strong>pacote premium por R$1.200</strong> para um cliente WordPress. 
-                Ele pagou na hora porque viu o assistente respondendo dúvidas sozinho. Melhor investimento!"
-              </p>
+              <p className="mb-4 text-slate-300" dangerouslySetInnerHTML={{ __html: t.testimonial3 }} />
               <div className="flex items-center gap-3">
                 <img 
                   src="https://image.pollinations.ai/prompt/Brazilian%20male%20entrepreneur,%2038%20years,%20confident%20expression,%20polo%20shirt,%20modern%20office,%20natural%20light,%20professional%20portrait?width=100&height=100&nologo=true&seed=202"
-                  alt="Rafael Souza"
+                  alt={t.testimonial3Name}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-semibold text-white">Rafael Souza</div>
-                  <div className="text-sm text-slate-400">Empreendedor Digital - MG</div>
+                  <div className="font-semibold text-white">{t.testimonial3Name}</div>
+                  <div className="text-sm text-slate-400">{t.testimonial3Role}</div>
                 </div>
               </div>
             </Card>
@@ -683,8 +672,13 @@ const Index = () => {
                 <span className="font-bold text-xl">LedChat</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                O assistente virtual para WordPress que multiplica seu faturamento
+                {t.footerDesc}
               </p>
+              <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
+                <p className="text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
+                  {t.apiLimitWarning}
+                </p>
+              </div>
             </div>
             <div>
               <h3 className="font-bold mb-4">{t.footerProduct}</h3>
