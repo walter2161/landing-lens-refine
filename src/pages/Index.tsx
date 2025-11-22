@@ -170,51 +170,34 @@ const Index = () => {
       <section id="problema" className="bg-slate-900 text-white py-20">
         <div className="container max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-8">
-            Você está deixando <span className="text-red-400">dinheiro na mesa</span> 
-            em CADA projeto WordPress que entrega
+            {t.heroTitle}
           </h2>
           <p className="text-xl text-center text-slate-300 mb-12">
-            Enquanto você entrega "apenas" sites bonitos, seus concorrentes estão cobrando 
-            R$500, R$800, até R$1.200 a mais pelo MESMO trabalho... só porque adicionaram 
-            um assistente virtual inteligente.
+            {t.heroSubtitle}
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <Card className="p-6 bg-slate-800 border-slate-700">
               <div className="text-4xl mb-3">😰</div>
-              <h3 className="font-bold mb-2 text-white">Sem Diferencial</h3>
-              <p className="text-sm text-slate-400">
-                Você entrega o mesmo que todo mundo: sites WordPress bonitos que não vendem sozinhos
-              </p>
+              <h3 className="font-bold mb-2 text-white">{t.benefit1Title.split(' ')[0]} {t.benefit1Title.split(' ')[1]}</h3>
+              <p className="text-sm text-slate-400">{t.benefit1Desc}</p>
             </Card>
             <Card className="p-6 bg-slate-800 border-slate-700">
               <div className="text-4xl mb-3">💸</div>
-              <h3 className="font-bold mb-2 text-white">Fatura Menos</h3>
-              <p className="text-sm text-slate-400">
-                Cobra o "preço de mercado" enquanto poderia cobrar 2x, 3x mais
-              </p>
+              <h3 className="font-bold mb-2 text-white">{t.benefit2Title.split('-')[0]}</h3>
+              <p className="text-sm text-slate-400">{t.benefit2Desc}</p>
             </Card>
             <Card className="p-6 bg-slate-800 border-slate-700">
               <div className="text-4xl mb-3">😔</div>
-              <h3 className="font-bold mb-2 text-white">Clientes Mornos</h3>
-              <p className="text-sm text-slate-400">
-                Eles pagam mas não ficam empolgados. Querem algo que "realmente venda"
-              </p>
+              <h3 className="font-bold mb-2 text-white">{t.benefit3Title.split('(')[0]}</h3>
+              <p className="text-sm text-slate-400">{t.benefit3Desc}</p>
             </Card>
           </div>
 
           <div className="bg-primary/20 border-2 border-primary/30 rounded-xl p-8 text-center">
-            <p className="text-2xl font-bold mb-4">
-              MAS E SE você pudesse dizer para seu cliente:
-            </p>
-            <blockquote className="text-xl italic mb-4 text-slate-300">
-              "Além do site WordPress, vou instalar um <strong className="text-white">assistente virtual com IA</strong> que 
-              responde dúvidas 24/7, mostra produtos, aumenta vendas automaticamente... 
-              por apenas <strong className="text-white">R$XXX a mais</strong>"
-            </blockquote>
-            <p className="text-lg font-semibold text-primary">
-              Eles vão pagar SEM PENSAR. (E você instalou isso em 5 minutos)
-            </p>
+            <p className="text-2xl font-bold mb-4">{t.howTitle}</p>
+            <blockquote className="text-xl italic mb-4 text-slate-300">{t.heroSubtitle}</blockquote>
+            <p className="text-lg font-semibold text-primary">{t.heroCTA}</p>
           </div>
         </div>
       </section>
@@ -223,14 +206,9 @@ const Index = () => {
       <section id="solucao" className="bg-background py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-primary/10 text-primary">A SOLUÇÃO</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Apresentamos o <span className="text-primary">LedChat</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              O plugin WordPress que adiciona um assistente virtual inteligente em qualquer site. 
-              Ele lê TODO o conteúdo (páginas, posts, produtos WooCommerce) e atende visitantes como um vendedor profissional.
-            </p>
+            <Badge className="mb-4 bg-primary/10 text-primary">{t.proofTitle}</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.benefitsTitle}</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t.heroSubtitle}</p>
           </div>
 
           <div className="max-w-4xl mx-auto mb-12">
@@ -303,12 +281,8 @@ const Index = () => {
       <section id="recursos" className="bg-slate-900 text-white py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Tudo que você precisa para <span className="text-primary">cobrar mais</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Cada funcionalidade foi pensada para você ganhar mais e entregar valor absurdo
-            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.pricingTitle}</h2>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto">{t.heroSubtitle}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -357,16 +331,10 @@ const Index = () => {
           </div>
 
           <div className="bg-primary/20 border-2 border-primary/30 rounded-2xl p-8 text-center">
-            <p className="text-2xl font-bold mb-4">
-              E tudo isso por um pagamento único de R$99
-            </p>
-            <p className="text-lg text-slate-300 mb-6">
-              Enquanto outros cobram R$47/mês para sempre...
-            </p>
+            <p className="text-2xl font-bold mb-4">{t.floatingOffer}</p>
+            <p className="text-lg text-slate-300 mb-6">{t.pricingOnce}</p>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-                Quero Garantir Meu LedChat Agora
-              </a>
+              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">{t.pricingCTA}</a>
             </Button>
           </div>
         </div>
@@ -400,54 +368,24 @@ const Index = () => {
       <section id="como-funciona" className="bg-background py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-primary/10 text-primary">SIMPLES ASSIM</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Como você vai de "dev comum" para "especialista em IA" em <span className="text-primary">menos de 1 hora</span>
-            </h2>
+            <Badge className="mb-4 bg-primary/10 text-primary">{t.howTitle.split(':')[0]}</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.heroTitle}</h2>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            <ProcessStep
-              number="1"
-              title="Compre Agora (30 segundos)"
-              description="Clique no botão, pague R$99 via PagBank. Seguro, rápido, sem complicação."
-            />
-            <ProcessStep
-              number="2"
-              title="Receba por E-mail (até 24h)"
-              description="Plugin .zip para WordPress + documentação completa + vídeo tutorial na sua caixa de entrada."
-            />
-            <ProcessStep
-              number="3"
-              title="Instale no WordPress (2 minutos)"
-              description="Plugins > Adicionar novo > Upload > Ativar. Igual qualquer outro plugin WordPress."
-            />
-            <ProcessStep
-              number="4"
-              title="Configure Básico (3 minutos)"
-              description="Nome do assistente, mensagem de boas-vindas, número do WhatsApp. Só isso."
-            />
-            <ProcessStep
-              number="5"
-              title="Cole o Shortcode (10 segundos)"
-              description="Copie [ledchat] e cole onde quiser no WordPress. Rodapé, popup, página específica. Funciona."
-            />
-            <ProcessStep
-              number="6"
-              title="LUCRE (pra sempre)"
-              description="Cobre R$300-1.200 a mais por projeto. Instale em dezenas de sites WordPress. Sem limite."
-            />
+            <ProcessStep number="1" title={t.step1Title} description={t.step1Desc} />
+            <ProcessStep number="2" title={t.step2Title} description={t.step2Desc} />
+            <ProcessStep number="3" title={t.step3Title} description={t.step3Desc} />
+            <ProcessStep number="4" title={t.step1Title} description={t.step1Desc} />
+            <ProcessStep number="5" title={t.step2Title} description={t.step2Desc} />
+            <ProcessStep number="6" title={t.step3Title} description={t.step3Desc} />
           </div>
 
           <div className="text-center mt-12">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-6">
-              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-                Começar Agora - Apenas R$99
-              </a>
+              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">{t.heroCTA}</a>
             </Button>
-            <p className="mt-4 text-muted-foreground">
-              Tempo total de setup: menos de 10 minutos
-            </p>
+            <p className="mt-4 text-muted-foreground">{t.pricingOnce}</p>
           </div>
         </div>
       </section>
@@ -456,9 +394,7 @@ const Index = () => {
       <section id="precos" className="bg-muted/30 py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Compare e veja o <span className="text-primary">absurdo</span> dessa oferta
-            </h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.pricingTitle}</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -588,12 +524,8 @@ const Index = () => {
       <section id="depoimentos" className="bg-slate-900 text-white py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Quem já está <span className="text-primary">faturando mais</span>
-            </h2>
-            <p className="text-xl text-slate-300">
-              Profissionais reais, resultados reais, dinheiro real
-            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.proofTitle}</h2>
+            <p className="text-xl text-slate-300">{t.heroSubtitle}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -667,39 +599,18 @@ const Index = () => {
       <section id="faq" className="bg-background py-20">
         <div className="container max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Perguntas que você pode ter
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              (E as respostas honestas)
-            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t.faqTitle}</h2>
+            <p className="text-xl text-muted-foreground">{t.heroSubtitle}</p>
           </div>
 
           <div className="space-y-4">
-            <FAQItem
-              question="Preciso saber programar para usar o LedChat?"
-              answer="NÃO. Se você sabe instalar um plugin no WordPress (literalmente clicar 3 botões), você consegue usar o LedChat. É mais fácil que configurar um tema WordPress."
-            />
-            <FAQItem
-              question="Funciona com WooCommerce?"
-              answer="SIM. E essa é uma das melhores partes. O LedChat lê TODOS os produtos, categorias, variações do WooCommerce e responde sobre eles automaticamente. É como ter um vendedor que conhece TODO o catálogo."
-            />
-            <FAQItem
-              question="A IA é realmente gratuita?"
-              answer="SIM. 100% gratuita. Sem tokens, sem API keys, sem mensalidades. Você paga R$99 uma vez e a IA funciona para sempre sem custo adicional. Zero pegadinhas."
-            />
-            <FAQItem
-              question="Posso usar em quantos sites WordPress?"
-              answer="QUANTOS VOCÊ QUISER. Licença ilimitada. Instale em 1 site, 10, 50, 100 sites WordPress... não importa. Mesmo investimento de R$99."
-            />
-            <FAQItem
-              question="Como recebo após a compra?"
-              answer="Em até 24 horas você recebe um e-mail com: plugin .zip para WordPress, documentação completa e vídeo tutorial passo a passo. Tudo pronto para usar."
-            />
-            <FAQItem
-              question="Vou receber atualizações?"
-              answer="Sim! Sua licença é vitalícia e inclui todas as atualizações futuras sem custo adicional. Uma vez comprado, você tem acesso para sempre."
-            />
+            <FAQItem question={t.faq1Q} answer={t.faq1A} />
+            <FAQItem question={t.faq2Q} answer={t.faq2A} />
+            <FAQItem question={t.faq3Q} answer={t.faq3A} />
+            <FAQItem question={t.faq4Q} answer={t.faq4A} />
+            <FAQItem question={t.faq5Q} answer={t.faq5A} />
+            <FAQItem question={t.faq6Q} answer={t.faq6A} />
+            <FAQItem question={t.faq7Q} answer={t.faq7A} />
           </div>
         </div>
       </section>
@@ -707,47 +618,39 @@ const Index = () => {
       {/* Final CTA - DARK */}
       <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20">
         <div className="container max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Última chance de garantir por R$99
-          </h2>
-          <p className="text-xl mb-8 text-slate-300">
-            Você tem duas opções agora:
-          </p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">{t.finalTitle}</h2>
+          <p className="text-xl mb-8 text-slate-300">{t.finalNote}</p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-12 text-left">
             <Card className="p-6 bg-slate-800 border-slate-700">
               <div className="text-4xl mb-3">❌</div>
-              <h3 className="font-bold text-xl mb-3 text-white">Opção 1: Não fazer nada</h3>
+              <h3 className="font-bold text-xl mb-3 text-white">{t.finalOption1}</h3>
               <ul className="space-y-2 text-sm text-slate-300">
-                <li>• Continuar entregando sites WordPress "comuns"</li>
-                <li>• Cobrar o mesmo de sempre</li>
-                <li>• Ver concorrentes passando você</li>
-                <li>• Perder R$900+ por mês</li>
-                <li>• Se arrepender depois quando o preço subir</li>
+                <li>• {t.heroSubtitle}</li>
+                <li>• {t.pricingOnce}</li>
+                <li>• {t.benefit1Title}</li>
+                <li>• {t.benefit2Title}</li>
+                <li>• {t.benefit3Title}</li>
               </ul>
             </Card>
             
             <Card className="p-6 bg-slate-800 border-slate-700 border-primary">
               <div className="text-4xl mb-3">✅</div>
-              <h3 className="font-bold text-xl mb-3 text-white">Opção 2: Agir agora</h3>
+              <h3 className="font-bold text-xl mb-3 text-white">{t.finalOption2}</h3>
               <ul className="space-y-2 text-sm text-slate-300">
-                <li>• Investir R$99 uma única vez</li>
-                <li>• Cobrar R$400-1.200 a mais por projeto WordPress</li>
-                <li>• Se diferenciar da concorrência</li>
-                <li>• Ganhar R$10.800+ no primeiro ano</li>
-                <li>• Ter orgulho do que entrega</li>
+                <li>• {t.floatingOffer}</li>
+                <li>• {t.benefit1Title}</li>
+                <li>• {t.benefit2Title}</li>
+                <li>• {t.benefit3Title}</li>
+                <li>• {t.pricingCTA}</li>
               </ul>
             </Card>
           </div>
 
           <div className="space-y-6">
-            <Button 
-              asChild
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-xl px-16 py-8 shadow-2xl"
-            >
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-xl px-16 py-8 shadow-2xl">
               <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-                SIM! Quero Faturar Mais Agora
+                {t.finalCTA}
                 <ArrowRight className="ml-2 w-6 h-6" />
               </a>
             </Button>
@@ -755,15 +658,15 @@ const Index = () => {
             <div className="flex items-center justify-center gap-8 text-sm text-slate-300">
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5" />
-                <span>Pagamento 100% Seguro</span>
+                <span>{t.trustBadge1}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5" />
-                <span>Atualizações Gratuitas</span>
+                <span>{t.pricingFeature5}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5" />
-                <span>Acesso Imediato</span>
+                <span>{t.heroGuarantee.split('•')[0].trim()}</span>
               </div>
             </div>
           </div>
@@ -784,30 +687,30 @@ const Index = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Produto</h3>
+              <h3 className="font-bold mb-4">{t.footerProduct}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#recursos" className="hover:text-primary transition-colors">Funcionalidades</a></li>
-                <li><a href="#precos" className="hover:text-primary transition-colors">Preços</a></li>
-                <li><a href="#como-funciona" className="hover:text-primary transition-colors">Como Funciona</a></li>
-                <li><a href="#depoimentos" className="hover:text-primary transition-colors">Depoimentos</a></li>
+                <li><a href="#recursos" className="hover:text-primary transition-colors">{t.pricingFeature1}</a></li>
+                <li><a href="#precos" className="hover:text-primary transition-colors">{t.pricingTitle}</a></li>
+                <li><a href="#como-funciona" className="hover:text-primary transition-colors">{t.howTitle}</a></li>
+                <li><a href="#depoimentos" className="hover:text-primary transition-colors">{t.proofTitle}</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Suporte</h3>
+              <h3 className="font-bold mb-4">{t.footerSupport}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#como-funciona" className="hover:text-primary transition-colors">Documentação</a></li>
-                <li><a href="#como-funciona" className="hover:text-primary transition-colors">Tutorial em Vídeo</a></li>
+                <li><a href="#como-funciona" className="hover:text-primary transition-colors">{t.step1Title}</a></li>
+                <li><a href="#como-funciona" className="hover:text-primary transition-colors">{t.step2Title}</a></li>
                 <li><a href="#faq" className="hover:text-primary transition-colors">FAQ</a></li>
-                <li><a href="mailto:contato@ledchat.com.br" className="hover:text-primary transition-colors">Contato</a></li>
+                <li><a href="mailto:contato@ledchat.com.br" className="hover:text-primary transition-colors">{t.footerContact}</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Legal</h3>
+              <h3 className="font-bold mb-4">{t.footerLegal}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Licença Vitalícia</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Perguntas Frequentes</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">{t.footerLegal}</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">{t.footerSupport}</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">{t.trustBadge4}</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">FAQ</a></li>
               </ul>
             </div>
           </div>
