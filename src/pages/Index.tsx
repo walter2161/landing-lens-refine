@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ChatBot } from "@/components/ChatBot";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const PURCHASE_LINK = "https://pag.ae/81es9xYnQ/button";
 
@@ -57,11 +58,14 @@ const Index = () => {
             <img src="/logo.png" alt="LedChat" className="w-10 h-10" />
             <span className="font-bold text-xl">LedChat</span>
           </div>
-          <Button asChild className="bg-primary hover:bg-primary/90">
-            <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-              Garantir Meu LedChat - R$99
-            </a>
-          </Button>
+          <div className="flex items-center gap-4">
+            <LanguageSelector />
+            <Button asChild className="bg-primary hover:bg-primary/90">
+              <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
+                Garantir Meu LedChat - R$99
+              </a>
+            </Button>
+          </div>
         </div>
       </header>
 
