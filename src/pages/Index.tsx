@@ -25,11 +25,13 @@ import {
 import { useState, useEffect } from "react";
 import { ChatBot } from "@/components/ChatBot";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PURCHASE_LINK = "https://pag.ae/81es9xYnQ/button";
 
 const Index = () => {
   const [showFloatingFooter, setShowFloatingFooter] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +64,7 @@ const Index = () => {
             <LanguageSelector />
             <Button asChild className="bg-primary hover:bg-primary/90">
               <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-                Garantir Meu LedChat - R$99
+                {t.floatingCTA} - {t.floatingOffer.split(': ')[1]}
               </a>
             </Button>
           </div>
@@ -74,39 +76,38 @@ const Index = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 text-sm">
-              🔥 Oferta Limitada - Apenas R$99 (era R$450)
+              {t.floatingLimited}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Multiplique seu <span className="text-primary">faturamento</span> cobrando mais por cada projeto WordPress
+              {t.heroTitle}
             </h1>
             <p className="text-xl text-muted-foreground mb-6">
-              O único plugin de <strong>WordPress</strong> que transforma sites comuns em máquinas de vendas 24/7. 
-              Seus clientes vão <strong>implorar</strong> para ter isso.
+              {t.heroSubtitle}
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-lg">Cobre R$400 a R$1.200 a mais por projeto</span>
+                <span className="text-lg">{t.benefit1Title}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-lg">IA 100% gratuita - sem mensalidades NUNCA</span>
+                <span className="text-lg">{t.benefit2Title}</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-lg">Instalação em 5 minutos (sem código)</span>
+                <span className="text-lg">{t.benefit3Title}</span>
               </li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 h-14">
                 <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-                  Sim, Quero Faturar Mais Agora
+                  {t.heroCTA}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted-foreground">
-              ⚡ Acesso imediato por e-mail • 🔒 Licença Vitalícia • ⭐ Atualizações Gratuitas
+              {t.heroGuarantee}
             </p>
           </div>
           <div className="relative">
