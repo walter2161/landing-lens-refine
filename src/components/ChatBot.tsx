@@ -3,6 +3,8 @@ import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { parseMarkdown } from '@/lib/markdown';
 
 const MISTRAL_API_KEY = "5qUwtpMaCjfwMeM1geTCwS7fivY6RcW2";
 
@@ -11,58 +13,18 @@ interface Message {
   content: string;
 }
 
-const SITE_CONTEXT = `
-Você é um assistente virtual especializado em vendas, combinando as técnicas persuasivas de Neil Patel e Gary Halbert. Seu objetivo é convencer visitantes a comprar o LedChat, um plugin WordPress de assistente virtual com IA.
-
-IMPORTANTE: Suas respostas devem ser CURTAS e DIRETAS (máximo 2-3 frases). Seja objetivo e persuasivo sem enrolação.
-
-INFORMAÇÕES DO PRODUTO:
-- Nome: LedChat
-- Preço: R$ 97,00 (oferta especial, antes R$ 297)
-- O que é: Plugin WordPress que adiciona um assistente virtual inteligente ao site
-- Benefícios principais:
-  * Atendimento 24/7 automatizado
-  * Aumenta conversões em até 300%
-  * Fácil instalação (menos de 5 minutos)
-  * Integração com WhatsApp
-  * Usa IA da Mistral
-  * Personalização total do avatar e respostas
-  * Funciona com qualquer tema WordPress
-
-INSTALAÇÃO:
-1. Download do arquivo ZIP
-2. WordPress → Plugins → Adicionar Novo → Enviar Plugin
-3. Ativar o plugin
-4. Configurar em LedChat → Configurações
-
-CONFIGURAÇÃO:
-- Chave da API Mistral (obtida em mistral.ai)
-- Chave de Licença (solicitar em suporte@ledmarketing.com.br)
-- Personalização de nome, função, avatar
-- Opção de integração com WhatsApp
-- Uso do shortcode [ledchat] onde desejar
-
-TÉCNICAS DE PERSUASÃO:
-- Use urgência e escassez (oferta limitada)
-- Foque em resultados e ROI
-- Use prova social e estatísticas
-- Destaque a facilidade de uso
-- Enfatize o custo-benefício
-- Crie senso de perda se não comprar agora
-
-Seja conversacional, empático e persuasivo. Respostas CURTAS E DIRETAS.
-`;
 
 interface ChatBotProps {
   showFloatingFooter?: boolean;
 }
 
 export const ChatBot = ({ showFloatingFooter = false }: ChatBotProps) => {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: '👋 Olá! Sou o assistente do LedChat. Vi que você está interessado em turbinar seu site com IA. Posso te mostrar como aumentar suas vendas em até 300%?'
+      content: t.chatGreeting
     }
   ]);
   const [input, setInput] = useState('');
@@ -93,7 +55,7 @@ export const ChatBot = ({ showFloatingFooter = false }: ChatBotProps) => {
         body: JSON.stringify({
           model: 'mistral-large-latest',
           messages: [
-            { role: 'system', content: SITE_CONTEXT },
+            { role: 'system', content: t.chatContext },
             ...messages.map(m => ({ role: m.role, content: m.content })),
             { role: 'user', content: input }
           ],
@@ -168,7 +130,10 @@ export const ChatBot = ({ showFloatingFooter = false }: ChatBotProps) => {
                         : 'bg-muted text-foreground rounded-bl-sm'
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                    <div 
+                      className="text-sm whitespace-pre-wrap [&_strong]:font-bold [&_em]:italic"
+                      dangerouslySetInnerHTML={{ __html: parseMarkdown(message.content) }}
+                    />
                   </div>
                 </div>
               ))}
