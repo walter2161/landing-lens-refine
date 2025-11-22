@@ -148,19 +148,19 @@ const Index = () => {
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Shield className="w-5 h-5" />
-              <span className="font-medium">Pagamento Seguro</span>
+              <span className="font-medium">{t.trustBadge1}</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Award className="w-5 h-5" />
-              <span className="font-medium">Uso Ilimitado</span>
+              <span className="font-medium">{t.trustBadge2}</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Star className="w-5 h-5" />
-              <span className="font-medium">+500 Clientes</span>
+              <span className="font-medium">{t.trustBadge3}</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Lock className="w-5 h-5" />
-              <span className="font-medium">Licença Vitalícia</span>
+              <span className="font-medium">{t.trustBadge4}</span>
             </div>
           </div>
         </div>
@@ -811,10 +811,12 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2025 LedChat - Todos os direitos reservados. Desenvolvido por Led Marketing.</p>
-            <p className="mt-2">Plugin WordPress para Assistentes Virtuais com IA</p>
-          </div>
+            <div className="text-center pt-4 border-t">
+              <div className="text-lg font-bold text-primary">
+                {t.pricingCTA}
+              </div>
+              <div className="text-sm text-muted-foreground">{t.footerRights}</div>
+            </div>
         </div>
       </footer>
 
@@ -824,16 +826,16 @@ const Index = () => {
           <div className="container flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
-                <div className="font-bold text-lg">Oferta Especial - R$99</div>
-                <div className="text-sm opacity-90">Licença vitalícia • Uso ilimitado</div>
+                <div className="font-bold text-lg">{t.floatingOffer}</div>
+                <div className="text-sm opacity-90">{t.heroGuarantee.split('•')[1]} • {t.heroGuarantee.split('•')[2]}</div>
               </div>
               <div className="md:hidden">
-                <div className="font-bold">R$99 • Oferta Limitada</div>
+                <div className="font-bold">{t.floatingOffer}</div>
               </div>
             </div>
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
               <a href={PURCHASE_LINK} target="_blank" rel="noopener noreferrer">
-                Garantir Agora
+                {t.floatingCTA.split(' ').slice(1).join(' ')}
               </a>
             </Button>
           </div>
