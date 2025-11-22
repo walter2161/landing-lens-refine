@@ -662,6 +662,15 @@ const Index = () => {
         </div>
       </section>
 
+      {/* API Limit Notice */}
+      <section className="bg-muted/20 py-8 border-y">
+        <div className="container max-w-4xl mx-auto">
+          <div className="text-center text-xs text-muted-foreground leading-relaxed">
+            {t.apiLimitWarning}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t bg-muted/30">
         <div className="container py-12">
@@ -674,11 +683,6 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">
                 {t.footerDesc}
               </p>
-              <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
-                <p className="text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
-                  {t.apiLimitWarning}
-                </p>
-              </div>
             </div>
             <div>
               <h3 className="font-bold mb-4">{t.footerProduct}</h3>
